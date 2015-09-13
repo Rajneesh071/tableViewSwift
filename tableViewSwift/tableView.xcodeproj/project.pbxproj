@@ -18,6 +18,8 @@
 		47012BC21BA2EF8F002457B7 /* See You Again.png in Resources */ = {isa = PBXBuildFile; fileRef = 47012BBE1BA2EF8F002457B7 /* See You Again.png */; };
 		47012BC31BA2EF8F002457B7 /* party.png in Resources */ = {isa = PBXBuildFile; fileRef = 47012BBF1BA2EF8F002457B7 /* party.png */; };
 		47012BC41BA2EF8F002457B7 /* Sixty Five.png in Resources */ = {isa = PBXBuildFile; fileRef = 47012BC01BA2EF8F002457B7 /* Sixty Five.png */; };
+		47991E511BA5973A00D5A4D6 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47991E501BA5973A00D5A4D6 /* ContentModel.swift */; };
+		47991E531BA5974D00D5A4D6 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47991E521BA5974D00D5A4D6 /* ContentManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		47012BBE1BA2EF8F002457B7 /* See You Again.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "See You Again.png"; sourceTree = "<group>"; };
 		47012BBF1BA2EF8F002457B7 /* party.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = party.png; sourceTree = "<group>"; };
 		47012BC01BA2EF8F002457B7 /* Sixty Five.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sixty Five.png"; sourceTree = "<group>"; };
+		47991E501BA5973A00D5A4D6 /* ContentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		47991E521BA5974D00D5A4D6 /* ContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			children = (
 				47012B9B1BA2D5BE002457B7 /* AppDelegate.swift */,
 				47012B9D1BA2D5BE002457B7 /* ViewController.swift */,
+				47991E521BA5974D00D5A4D6 /* ContentManager.swift */,
+				47991E501BA5973A00D5A4D6 /* ContentModel.swift */,
 				47012B9F1BA2D5BE002457B7 /* Main.storyboard */,
 				47012BA21BA2D5BE002457B7 /* Images.xcassets */,
 				47012BA41BA2D5BE002457B7 /* LaunchScreen.xib */,
@@ -233,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				47012B9E1BA2D5BE002457B7 /* ViewController.swift in Sources */,
+				47991E531BA5974D00D5A4D6 /* ContentManager.swift in Sources */,
 				47012B9C1BA2D5BE002457B7 /* AppDelegate.swift in Sources */,
+				47991E511BA5973A00D5A4D6 /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

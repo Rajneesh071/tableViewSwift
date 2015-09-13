@@ -12,13 +12,18 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet
     var tableView: UITableView!
-    var items: [String] = ["Flash light","Sixty Five", "If you", "party","See You Again"]
-    var detailText: [String] = ["Jessie J","Gentle Bones", "BIGBANG", "Girls' Generation","Wiz Khalifa"]
+    let tableViewCellHeight:CGFloat = 80.0
+    let tableViewCellIdentifier  = "cell"
+
+    var dataToDisplay:NSMutableArray!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell" )
         
+        var contentMgrObj = ContentManager.new()
+        dataToDisplay = contentMgrObj.getDataToDisplay()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -28,29 +33,33 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
+        return self.dataToDisplay.count;
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
+        return tableViewCellHeight
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("c") as? UITableViewCell
+        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(self.tableViewCellIdentifier) as? UITableViewCell
         
         if cell == nil {
             
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,
-                reuseIdentifier: "cell")
+                reuseIdentifier: self.tableViewCellIdentifier)
         }
-        cell!.textLabel?.text = items[indexPath.row]
-        cell!.detailTextLabel?.text = detailText[indexPath.row]
-        cell!.imageView?.image = UIImage(named: "\(items[indexPath.row]).png")
+        var contentModelObj = dataToDisplay[indexPath.row] as! ContentModel
+        
+        cell!.textLabel?.text = contentModelObj.itemName
+        cell!.detailTextLabel?.text = contentModelObj.itemDescription
+        cell!.imageView?.image = UIImage(named: contentModelObj.itemImage)
+        
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("\(indexPath.row)")
+        var contentModelObj = dataToDisplay[indexPath.row] as! ContentModel
+        print("Name : \(contentModelObj.itemName) \nDescription : \(contentModelObj.itemDescription)")
     }
 }
 
